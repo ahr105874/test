@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h2></h2>
+    <img src="morning.jpg" alt="">
+
+    <script>
+        var date=new Date();
+        var h= date.getHours();
+        var img=document.querySelector('img');
+        var text=document.querySelector('h2');
+        if(h<=8){
+            text.innerHTML="早上好  现在的时间："+date;
+            img.src="morning.jpg";
+        }
+        else if(h<=12){
+            text.innerHTML="上午好 现在的时间："+date;
+            img.src="morning.jpg";
+        }
+        else if(h<=18){
+            text.innerHTML="下午好 现在的时间："+date;
+            img.src="afternoon.gif";
+        }
+        else{
+            text.innerHTML="晚上好 现在的时间："+date;
+            img.src="night.gif"
+        }
+        
+        
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h2></h2>
+    <img src="morning.jpg" alt="">
+
+    <script>
+        var date=new Date();
+        var h= date.getHours();
+        var img=document.querySelector('img');
+        var text=document.querySelector('h2');
+        if(h<=8){
+            text.innerHTML="早上好  现在的时间："+date;
+            img.src="morning.jpg";
+        }
+        else if(h<=12){
+            text.innerHTML="上午好 现在的时间："+date;
+            img.src="morning.jpg";
+        }
+        else if(h<=18){
+            text.innerHTML="下午好 现在的时间："+date;
+            img.src="afternoon.gif";
+        }
+        else{
+            text.innerHTML="晚上好 现在的时间："+date;
+            img.src="night.gif"
+        }
+        
+        
+    </script>
+</body>
+</html>
