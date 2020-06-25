@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            margin: 200px auto;
+            height: 45px;
+            width: 500px;
+        }
+        input{
+            height: 35px;
+            width: 200px;
+        }
+        a{
+            
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            border: 1px solid skyblue;
+            text-decoration: none;
+            background-color: pink;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>test!!测试搜索功能，在搜索框输入完，请点击空白区域，再点击搜索按钮</h1>
+    <h2>多搜索几次，搜索不同的东西试试</h2>
+    <h3>2020年6月25日  作者：安 测试自写搜索功能，初级程序并不稳定</h3>
+    <h4>结果请回复</h4>
+    <div class="box">
+        <input type="text" class="search" value="">
+        <a href="https://www.baidu.com/s?ie=UTF-8&wd=百度">搜索</a>
+    </div>
+
+</body>
+<script>
+    var search=document.querySelector('.search'); 
+    var a = document.querySelector('a');
+    search.onblur=function(){
+        var w=search.value;
+        a.href='https://www.baidu.com/s?ie=UTF-8&wd='+w; 
+    }
+    
+    
+    
+    
+    
+    
+</script>
+</html>
