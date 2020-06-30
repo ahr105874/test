@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .w{
+            margin:  0 auto;
+            width: 1200px;
+        }
+        .head{
+            height: 80px;
+            background-color: rgb(0,15,78);
+        }
+        .head_img{
+            position: relative;
+        }
+        .close{
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-style: normal;
+            color: white;
+            cursor: pointer;
+        }
+        .nav{
+            height: 35px;
+            background-color: rgb(227,228,229);
+        }
+        .local_head{
+            width: 85px;
+            line-height: 35px;
+            cursor:pointer;
+            text-align: center;
+        }
+        .local_bd{
+            display: none;
+            padding: 10px 0px;
+            padding-left:30px ;
+            width: 427px;
+            height: 578px;
+            border: 1px solid #ccc;
+            border-top:0 ;
+        }
+        .local_bd li{
+            float: left;
+            width: 75px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .local_bd li a{
+            color: gray;
+            padding: 5px;
+            font-size: 12px;
+
+        }
+        
+        .local_bd .current {
+            background-color: red;
+            color: white;
+        }
+        .local_bd a:hover{
+            background-color: rgb(244,244,244);
+            color: red;
+        }
+        .local_head_onmouse{
+            color: red;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="head">
+        <div class="head_img w">
+            <i class="close">x</i>
+            <img src="head.jpg" alt="">
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="w">
+            <div class="local">
+                <div class="local_head">
+                    黑龙江
+                </div>
+                <div class="local_bd">
+                    <ul>
+                        <li><a href="#">北京</a></li>
+                        <li><a href="#">上海</a></li>
+                        <li><a href="#">天津</a></li>
+                        <li><a href="#">重庆</a></li>
+                        <li><a href="#">河北</a></li>
+                        <li><a href="#">山西</a></li>
+                        <li><a href="#">河南</a></li>
+                        <li><a href="#">辽宁</a></li>
+                        <li><a href="#">吉林</a></li>
+                        <li><a href="#" class="current">黑龙江</a></li>
+                        <li><a href="#">内蒙古</a></li>
+                        <li><a href="#">江苏</a></li>
+                        <li><a href="#">山东</a></li>
+                        <li><a href="#">安徽</a></li>
+                        <li><a href="#">浙江</a></li>
+                        <li><a href="#">福建</a></li>
+                        <li><a href="#">湖北</a></li>
+                        <li><a href="#">湖南</a></li>
+                        <li><a href="#">广东</a></li>
+                        <li><a href="#">广西</a></li>
+                        <li><a href="#">江西</a></li>
+                        <li><a href="#">四川</a></li>
+                        <li><a href="#">海南</a></li>
+                        <li><a href="#">贵州</a></li>
+                        <li><a href="#">云南</a></li>
+                        <li><a href="#">西藏</a></li>
+                        <li><a href="#">陕西</a></li>
+                        <li><a href="#">甘肃</a></li>
+                        <li><a href="#">青海</a></li>
+                        <li><a href="#">宁夏</a></li>
+                        <li><a href="#">新疆</a></li>
+                        <li><a href="#">港澳</a></li>
+                        <li><a href="#">台湾</a></li>
+                        <li><a href="#">钓鱼岛</a></li>
+                        <li><a href="#">海外</a></li>
+                    </ul>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        var close=document.querySelector('.close');
+        var header=document.querySelector('.head');
+        close.onclick=function(){
+            header.style.display='none';
+        }
+
+        var local_hd=document.querySelector('.local_head');
+        var local_bd=document.querySelector('.local_bd');
+        local_hd.onmouseover=function(){
+            local_hd.className='local_head local_head_onmouse';
+            local_bd.style.display='block';
+        }
+        document.onclick=function(){
+            local_hd.className='local_head ';
+            local_bd.style.display='none';
+        }
+        var local_bd_li=document.querySelectorAll('li');
+        for(var i=0;i<local_bd_li.length;i++){
+            local_bd_li[i].onclick=function(e){
+                local_hd.innerHTML=e.target.innerHTML
+                for(var i=0;i<local_bd_li.length;i++){
+                    local_bd_li[i].firstChild.className='';
+                    e.target.className='current';
+                }
+            
+            }
+        }
+    </script>
+</body>
+</html>
