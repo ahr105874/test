@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<title>大清王朝-主页面</title>
+        <link rel="stylesheet" href="css.css">
+        <style>
+            .nav{
+           position: relative;
+           height: 200px;
+           background-color:rgb(117, 205, 253) ;
+       }
+       .nav img{
+           width: 100px;
+           height: 100px;
+       }
+       .text{
+           position: absolute;
+           top: 59px;
+           left: 42%;
+           font-weight: 900;
+           font-size: 30px;
+           color: white;
+       }
+       .input{
+            margin-top: 10px;
+            height: 110px;
+            line-height: 110px;
+            border: 2px solid skyblue;
+       }
+       .start{
+           display: block;
+           width: 200px;
+           height: 50px;
+           line-height: 50px;
+           color: white;
+           font-size: 24px;
+           font-weight: 700;
+           text-align: center;
+           margin: 50px auto;
+           background-color: red;
+       }
+        </style>
+	</head>
+	<body>
+		<nav class="nav">
+            <img src="logo.jpg" alt="">
+            <h2>基于RFID系统的阅卷系统</h2>
+            <div class="text">大清王朝专用</div>
+        </nav>
+        <div class="input">
+            选择题答案：<input type="file">
+        </div>
+        <div class="input">
+            选择题答案：<input type="file">
+        </div>
+        <div class="input">
+            选择题答案：<input type="file">
+        </div>
+        <a href="#" class="start">开始阅卷</a>
+        <script>
+            var input=document.querySelectorAll('input');
+            var a=document.querySelector('.start');
+            a.onclick=function(){
+                var nu=0;
+                for(var i=0;i<input.length;i++){
+                    
+                    if(input[i].value==''){
+                        nu++;
+                    }
+                }
+                if(nu==0){
+                    alert('正在阅卷，请稍后');
+                }else{
+                    alert('请补全文件');
+                }
+                
+            }
+        </script>
+	</body>	
+</html>
