@@ -82,14 +82,16 @@
                 this.value='';
                 this.style.color='black';
             }
+           
         }
         var a=document.querySelector('a');
         a.onclick=function(){
-            if(user.value!='root'&&psw.value!='123456'){
-                alert('密码或账号输入错误请重试')
+            if(user.value!='root'||psw.value!='123456'){
+                alert('密码或账号输入错误请重试');
             }
             else{
-                alert('登录成功，请稍等')
+                alert('登录成功，请稍等');
+                a.href='display.html'
             }
         }
 
