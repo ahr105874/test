@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基于RFID系统的阅卷系统-登录</title>
+    <link rel="stylesheet" href="css.css">
+    <style>
+       .nav{
+           height: 200px;
+           background-color:rgb(117, 205, 253) ;
+       }
+       .nav img{
+           width: 100px;
+           height: 100px;
+       }
+       .login{
+            margin-top: 50px;
+            width: 400px;
+            height: 400px;
+            border: 1px solid skyblue;
+       }
+       .login h3{
+           height: 50px;
+           line-height: 50px;
+           text-align: center;
+           background-color: skyblue;
+           color: white;
+       }
+       table{
+           margin: 20px auto;
+           width: 300px;
+       }
+       table tr td{
+           height: 30px;
+       }
+       table tr td a{
+           display: inline-block;
+           margin-top:30px ;
+           width: 100px;
+           text-align: center;
+           padding:5px;
+           color: white;
+           background-color: skyblue;
+       }
+       table tr td input{
+           padding: 0 5px;
+           color: #ccc;
+       }
+    </style>
+
+</head>
+<body>
+    <nav class="nav">
+        <img src="logo.jpg" alt="">
+        <h2>基于RFID系统的阅卷系统</h2>
+    </nav>
+    <div class="login w">
+        <h3>欢迎使用本阅卷系统</h3>
+        <table>
+            <tr>
+                <td>账号：</td>
+                <td><input type="text" class="user" value="请输入用户名"></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td><input type="password" class="psw"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="javascript:;">老师登录</a></td>
+            </tr>
+        </table>
+    </div>
+    
+    <script>
+        var user=document.querySelector('.user');
+        var psw=document.querySelector('.psw');
+        var input=document.querySelectorAll('input');
+        for(i=0;i<input.length;i++){
+            input[i].onfocus=function(){
+                this.value='';
+                this.style.color='black';
+            }
+        }
+        var a=document.querySelector('a');
+        a.onclick=function(){
+            if(user.value!='root'&&psw.value!='123456'){
+                alert('密码或账号输入错误请重试')
+            }
+            else{
+                alert('登录成功，请稍等')
+            }
+        }
+
+    </script>
+</body>
+</html>
