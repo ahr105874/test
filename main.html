@@ -4,7 +4,7 @@
 		<title>大清王朝-主页面</title>
         <link rel="stylesheet" href="css.css">
         <style>
-            .nav{
+        .nav{
            position: relative;
            height: 200px;
            background-color:rgb(117, 205, 253) ;
@@ -39,6 +39,34 @@
            margin: 50px auto;
            background-color: red;
        }
+
+
+
+       /* 进度条 */
+       /*定义父容器*/
+            .content{
+            width: 500px;
+            height: 200px;
+            background: pink;
+            margin:0 auto;
+            }
+            /*定义进度条*/
+            .box{
+            width: 20px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: #f00;
+            color: #fff;
+            }
+            /*定义下方显示的下载百分比*/
+            .percent{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            color: #00f;
+            text-align: center;
+            }
         </style>
 	</head>
 	<body>
@@ -57,6 +85,11 @@
             选择题答案：<input type="file">
         </div> -->
         <a href="#" class="start">开始阅卷</a>
+        <div class="content" id="content">
+            <input type="button" id="button" value="暂停/增加" onclick="parse()">
+            <div class="box" id="box"></div>
+            <div class="percent" id="percent"></div>
+            </div>
         <script>
             var input=document.querySelectorAll('input');
             var a=document.querySelector('.start');
@@ -69,7 +102,8 @@
                     }
                 }
                 if(nu==0){
-                    alert('正在阅卷，请稍后');
+                    
+                    a.href='see.html';
                     
                 }else{
                     alert('请补全文件');
@@ -79,6 +113,8 @@
             }
 
 
+
+            
            
         </script>
 	</body>	
