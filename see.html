@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在阅卷请稍后！！</title>
+    <link rel="stylesheet" href="css.css">
+    <style>
+        .nav{
+           position: relative;
+           height: 200px;
+           background-color:rgb(117, 205, 253) ;
+       }
+       .nav img{
+           width: 100px;
+           height: 100px;
+       }
+       .text{
+           position: absolute;
+           top: 59px;
+           left: 42%;
+           font-weight: 900;
+           font-size: 30px;
+           color: white;
+       }
+
+
+
+       /*定义父容器*/
+        .content{
+            width: 500px;
+            height: 200px;
+            background: transparent;
+            margin:50px auto;
+        }
+        /*定义进度条*/
+        .box{
+            width: 20px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: #f00;
+            color: #fff;
+        }
+        /*定义下方显示的下载百分比*/
+        .percent{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            color: #00f;
+            text-align: center;
+        }
+        .check{
+            display: none;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: red;
+            color:white;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <img src="logo.jpg" alt="">
+        <h2>基于RFID系统的阅卷系统</h2>
+        <div class="text">大清王朝专用</div>
+    </nav>
+    <h2>正在阅卷请稍后！！！</h2>
+    <div class="content" id="content">
+        <!-- <input type="button" id="button" value="暂停/增加" onclick="parse()"> -->
+        <div class="box" id="box"></div>
+        <div class="percent" id="percent"></div>
+    </div>
+
+    <a href="check.html" class="check">查询成绩</a>
+
+
+
+    <script>
+        // 获取id为box的元素
+        var box = document.getElementById("box");
+                //初始化y，此值只可以放在方法外部，若放到方法内部的话，那方法的每一次执行都是从宽度为0开始，从而使得进度条会一直停留在第一次执行方法的位置。
+        var y = 0;
+                //定义parse()方法
+        function parse(){
+                //获取进度条div的宽度
+        var x = box.style.width;
+
+        var check=document.querySelector('.check');
+        x = parseInt(x) + 1;
+        y = y+1;
+                //将y值加上百分号赋值给box的宽度。这样每次+1就可以实现进度条占父容器的100%;
+        box.style.width = y + "%";
+        //将y值加上百分号并赋值给显示下载百分比的div上
+        document.getElementById("percent").innerHTML = y + "%";
+        //判断当y已经100的时候，也就是进度条的宽度和父容器的宽度一致的时候停止。
+        if (y >= 100) {
+            clearInterval(id);
+            document.getElementById("percent").innerHTML = "100%";
+            document.getElementById("box").innerHTML = "阅卷完毕!";
+            check.style.display='block';
+        }
+                }
+                //每10毫秒调用一下parse()方法.
+                var id = setInterval("parse()",30);
+                //当单机父容器时，进度条停止
+                document.getElementById("content").onclick = function(){
+                clearInterval(id);
+                } 
+
+       
+
+    </script>
+</body>
+</html>
