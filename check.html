@@ -119,6 +119,7 @@
             </tr>
         </tbody>
     </table>
+    
 
     <script>
         var tbody=document.querySelector('tbody');
@@ -149,24 +150,20 @@
                 var si=prompt('输入本题答案是否正确：');
                 var wu=prompt('输入本题答案是否正确：');
                 var zong=prompt('输入总分：');
+                
                 var n=[
-                    {
-                        number:number,
-                        name:name,
-                        yi:yi,
-                        er:er,
-                        san:san,
-                        si:si,
-                        wu:wu,
-                        zong:zong
-                    }
+                    number,name,yi,er,san,si,wu,zong
                 ];
                 for(var i=0;i<n.length;i++){
-                    for(var j in n[i]){
-                        var td =document.createElement('td');
-                        td.innerHTML=n[i][j];
-                        tr.appendChild(td);
-                    }
+                    
+                        
+                    var clas=['number','name','yi','er','san','si','wu','zong'];
+                    var td =document.createElement('td');
+                    td.innerHTML=n[i];
+                    td.setAttribute('class',clas[i]);
+                    tr.appendChild(td);
+                        
+                }
                    
                     var td=document.createElement('td');
                     td.innerHTML="<a href='javascrip:;'class='del'>删除</a>"
@@ -179,10 +176,11 @@
                 
                 
              
-                 }
+                 
            }  
        }
         
+       
 
        
        
