@@ -29,9 +29,9 @@
            border: 2px solid skyblue;
            text-align: center;
        }
-       tbody tr{
+       /* tbody tr{
            display: none;
-       }
+       } */
     </style>
 </head>
 <body>
@@ -121,141 +121,74 @@
     </table>
 
     <script>
-        var n =[
-            {
-                number:1,
-                name:'张三',
-                one:'1',
-                two:'1',
-                three:'0',
-                four:'1',
-                five:'0',
-                num:'60分'
-            },
-            {
-                number:2,
-                name:'李四',
-                one:'0',
-                two:'1',
-                three:'0',
-                four:'1',
-                five:'0',
-                num:'40分'
-            },
-            {
-                number:3,
-                name:'张龙',
-                one:'1',
-                two:'1',
-                three:'1',
-                four:'1',
-                five:'0',
-                num:'80分'
-            },
-            {
-                number:4,
-                name:'赵虎',
-                one:'1',
-                two:'1',
-                three:'1',
-                four:'1',
-                five:'1',
-                num:'100分'
-            },
-            {
-                number:5,
-                name:'王朝',
-                one:'0',
-                two:'0',
-                three:'0',
-                four:'1',
-                five:'0',
-                num:'20分'
-            },
-            {
-                number:6,
-                name:'马汉',
-                one:'0',
-                two:'0',
-                three:'0',
-                four:'0',
-                five:'0',
-                num:'0分'
-            },
-
-        ];
         var tbody=document.querySelector('tbody');
-        for(var i=0;i<n.length;i++){
-            var tr=document.createElement('tr');
-            tbody.appendChild(tr);
-            for(var j in n[i] ){
-                var td=document.createElement('td');
-                td.innerHTML=n[i][j];
-                tr.appendChild(td);
-            }
-            var td=document.createElement('td');
-            td.innerHTML="<a href='javascrip:;' class='del'>删除</a>";
-            tr.appendChild(td);
-            var td=document.createElement('td');
-            td.innerHTML="<a href='javascrip:;' class='remove'>更改</a>"
-            tr.appendChild(td);
-        }
+        var tr= tbody.querySelectorAll('tr');
+       for(var i=0;i<tr.length;i++){
+           var td=document.createElement('td');
+           td.innerHTML="<a href='javascrip:;'class='del'>删除</a>"
+           tr[i].appendChild(td);
+           var td=document.createElement('td');
+           td.innerHTML="<input class='remove' type='button' value='添加'>";
+           tr[i].appendChild(td);
+       }
+       
         var del=document.querySelectorAll('.del');
+        var remove=document.querySelectorAll('.remove');
         for(var i=0;i<del.length;i++){
             del[i].onclick=function(){
                 tbody.removeChild(this.parentNode.parentNode)
             }
-        }
-        var remove=document.querySelectorAll('.remove');
-        for(var i=0;i<remove.length;i++){
-            remove[i].onclick=function(){
+           remove[i].onclick=function(){
+                var tr=document.createElement('tr');
+                tbody.appendChild(tr);
                 var number=prompt('输入序号：');
-                var user=prompt('输入姓名：');
-                var one=prompt('输入本题是否正确：');
-                var two=prompt('输入本题是否正确：');
-                var three=prompt('输入本题是否正确：');
-                var four=prompt('输入本题是否正确：');
-                var five=prompt('输入本题是否正确：');
-                var num=prompt('输入总分：');
-
-                var nn=[{
-                    number:6,
-                    name:user,
-                    one:one,
-                    two:two,
-                    three:three,
-                    four:four,
-                    five:five,
-                    num:num
-                }];
-                tbody.removeChild(this.parentNode.parentNode);
-                for(var i=0;i<nn.length;i++){
-                    var tr=document.createElement('tr');
-                    tbody.appendChild(tr);
-                    for(var j in n[i] ){
-                        var td=document.createElement('td');
-                        td.innerHTML=nn[i][j];
+                var name=prompt('输入名字：');
+                var yi=prompt('输入本题答案是否正确：');
+                var er=prompt('输入本题答案是否正确：');
+                var san=prompt('输入本题答案是否正确：');
+                var si=prompt('输入本题答案是否正确：');
+                var wu=prompt('输入本题答案是否正确：');
+                var zong=prompt('输入总分：');
+                var n=[
+                    {
+                        number:number,
+                        name:name,
+                        yi:yi,
+                        er:er,
+                        san:san,
+                        si:si,
+                        wu:wu,
+                        zong:zong
+                    }
+                ];
+                for(var i=0;i<n.length;i++){
+                    for(var j in n[i]){
+                        var td =document.createElement('td');
+                        td.innerHTML=n[i][j];
                         tr.appendChild(td);
-                     }
-                }
-                var td=document.createElement('td');
-                td.innerHTML="<a href='javascrip:;' class='del'>删除</a>";
-                tr.appendChild(td);
-                var td=document.createElement('td');
-                td.innerHTML="<a href='javascrip:;' class='remove'>更改</a>"
-                tr.appendChild(td);
-                }
-        }
+                    }
+                   
+                    var td=document.createElement('td');
+                    td.innerHTML="<a href='javascrip:;'class='del'>删除</a>"
+                    tr.appendChild(td);
+                    var td=document.createElement('td');
+                    td.innerHTML="<input class='remove' type='button' value='添加'>";
+                    tr.appendChild(td);
 
+                    
+                
+                
+             
+                 }
+           }  
+       }
+        
 
-
-        var link = document.createElement('a');
-        link.setAttribute("download", "");
-        link.href = "you file url";
+       
+       
 
     </script>
 </body>
 
 
-</html>
 </html>
