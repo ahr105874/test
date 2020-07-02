@@ -137,6 +137,317 @@
         var remove=document.querySelectorAll('.remove');
         for(var i=0;i<del.length;i++){
             del[i].onclick=function(){
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>大清王朝御用-查询系统</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="check.css">
+    <style>
+        .nav{
+           position: relative;
+           height: 200px;
+           background-color:rgb(117, 205, 253) ;
+       }
+       .nav img{
+           width: 100px;
+           height: 100px;
+       }
+
+
+       .message{
+            width: 900px;
+            margin: 100px auto;
+            border: 1px soild skyblue;
+            border-collapse: collapse;
+       }
+       .message td{
+           height: 70px;
+           line-height: 70px;
+           border: 2px solid skyblue;
+           text-align: center;
+           color: black;
+           font-weight: 900;
+           font-size: 25px;
+       }
+       body{
+           background-image: none;
+       }
+       
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <img src="logo.jpg" alt="">
+        <h2>基于RFID系统的阅卷系统</h2>
+        <div class="text">大清王朝专用</div>
+    </nav>
+    <div class="cro_l">
+        <ul>
+            <li><a href="other.htm">导航</a></li>
+            <li><a href="javascript:;">不正经商城</a></li>
+            <li><a href="javascript:;">vip充值</a></li>
+            <li><a href="javascript:;">商业合作</a></li>
+            <li><a href="javascript:;">广告位出租</a></li>
+            <li><a href="javascript:;">人工客服</a></li>
+            <li><a href="javascript:;">诚聘英才</a></li>
+        </ul>
+    </div>
+    <table class="message">
+        <thead>
+            <tr>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>一</td>
+                <td>二</td>
+                <td>三</td>
+                <td>四</td>
+                <td>五</td>
+                <td>总分</td>
+                <td>操作</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="none">
+                <td class="number">1</td>
+                <td class="name">张三</td>
+                <td class="yi">1</td>
+                <td class="er">1</td>
+                <td class="san">0</td>
+                <td class="si">1</td>
+                <td class="wu">0</td>
+                <td class="zong">60分</td>
+            </tr>
+            <tr class="none">
+                <td  class="number">2</td>
+                <td  class="name">李四</td>
+                <td  class="yi">0</td>
+                <td  class="er">1</td>
+                <td  class="san">0</td>
+                <td  class="si">1</td>
+                <td  class="wu">0</td>
+                <td  class="zong">40分</td>
+            </tr>
+            <tr class="none">
+                <td class="number">3</td>
+                <td class="name">张龙</td>
+                <td class="yi">1</td>
+                <td class="er">1</td>
+                <td class="san">1</td>
+                <td class="si">1</td>
+                <td class="wu">0</td>
+                <td class="zong">80分</td>
+            </tr>
+            <tr class="none"> 
+                <td class="number">4</td>
+                <td class="name">赵虎</td>
+                <td class="yi">1</td>
+                <td class="er">1</td>
+                <td class="san">1</td>
+                <td class="si">1</td>
+                <td class="wu">1</td>
+                <td class="zong">100分</td>
+            </tr>
+            <tr class="none">
+                <td class="number">5</td>
+                <td class="name">王朝</td>
+                <td class="yi">0</td>
+                <td class="er">1</td>
+                <td class="san">0</td>
+                <td class="si">0</td>
+                <td class="wu">0</td>
+                <td class="zong">20分</td>
+            </tr>
+            <tr class="none">
+                <td class="number">6</td>
+                <td class="name">马汉</td>
+                <td class="yi">0</td>
+                <td class="er">0</td>
+                <td class="san">0</td>
+                <td class="si">0</td>
+                <td class="wu">0</td>
+                <td class="zong">0分</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <script>
+        var tbody=document.querySelector('tbody');
+        var tr= tbody.querySelectorAll('tr');
+       for(var i=0;i<tr.length;i++){
+           var td=document.createElement('td');
+           td.innerHTML="<a href='javascrip:;'class='del'>删除</a>"
+           tr[i].appendChild(td);
+           var td=document.createElement('td');
+           td.innerHTML="<input class='remove' type='button' value='添加'>";
+           tr[i].appendChild(td);
+       }
+       
+        var del=document.querySelectorAll('.del');
+        var remove=document.querySelectorAll('.remove');
+        for(var i=0;i<del.length;i++){
+            del[i].onclick=function(){
+                tbody.removeChild(this.parentNode.parentNode)
+            }
+           remove[i].onclick=function(){
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>大清王朝御用-查询系统</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="check.css">
+    <style>
+        .nav{
+           position: relative;
+           height: 200px;
+           background-color:rgb(117, 205, 253) ;
+       }
+       .nav img{
+           width: 100px;
+           height: 100px;
+       }
+
+
+       .message{
+            width: 900px;
+            margin: 100px auto;
+            border: 1px soild skyblue;
+            border-collapse: collapse;
+       }
+       .message td{
+           height: 70px;
+           line-height: 70px;
+           border: 2px solid skyblue;
+           text-align: center;
+           color: black;
+           font-weight: 900;
+           font-size: 25px;
+       }
+       body{
+           background-image: none;
+       }
+       
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <img src="logo.jpg" alt="">
+        <h2>基于RFID系统的阅卷系统</h2>
+        <div class="text">大清王朝专用</div>
+    </nav>
+    <div class="cro_l">
+        <ul>
+            <li><a href="other.htm">导航</a></li>
+            <li><a href="javascript:;">不正经商城</a></li>
+            <li><a href="javascript:;">vip充值</a></li>
+            <li><a href="javascript:;">商业合作</a></li>
+            <li><a href="javascript:;">广告位出租</a></li>
+            <li><a href="javascript:;">人工客服</a></li>
+            <li><a href="javascript:;">诚聘英才</a></li>
+        </ul>
+    </div>
+    <table class="message">
+        <thead>
+            <tr>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>一</td>
+                <td>二</td>
+                <td>三</td>
+                <td>四</td>
+                <td>五</td>
+                <td>总分</td>
+                <td>操作</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="none">
+                <td class="number">1</td>
+                <td class="name">张三</td>
+                <td class="yi">1</td>
+                <td class="er">1</td>
+                <td class="san">0</td>
+                <td class="si">1</td>
+                <td class="wu">0</td>
+                <td class="zong">60分</td>
+            </tr>
+            <tr class="none">
+                <td  class="number">2</td>
+                <td  class="name">李四</td>
+                <td  class="yi">0</td>
+                <td  class="er">1</td>
+                <td  class="san">0</td>
+                <td  class="si">1</td>
+                <td  class="wu">0</td>
+                <td  class="zong">40分</td>
+            </tr>
+            <tr class="none">
+                <td class="number">3</td>
+                <td class="name">张龙</td>
+                <td class="yi">1</td>
+                <td class="er">1</td>
+                <td class="san">1</td>
+                <td class="si">1</td>
+                <td class="wu">0</td>
+                <td class="zong">80分</td>
+            </tr>
+            <tr class="none"> 
+                <td class="number">4</td>
+                <td class="name">赵虎</td>
+                <td class="yi">1</td>
+                <td class="er">1</td>
+                <td class="san">1</td>
+                <td class="si">1</td>
+                <td class="wu">1</td>
+                <td class="zong">100分</td>
+            </tr>
+            <tr class="none">
+                <td class="number">5</td>
+                <td class="name">王朝</td>
+                <td class="yi">0</td>
+                <td class="er">1</td>
+                <td class="san">0</td>
+                <td class="si">0</td>
+                <td class="wu">0</td>
+                <td class="zong">20分</td>
+            </tr>
+            <tr class="none">
+                <td class="number">6</td>
+                <td class="name">马汉</td>
+                <td class="yi">0</td>
+                <td class="er">0</td>
+                <td class="san">0</td>
+                <td class="si">0</td>
+                <td class="wu">0</td>
+                <td class="zong">0分</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <script>
+        var tbody=document.querySelector('tbody');
+        var tr= tbody.querySelectorAll('tr');
+       for(var i=0;i<tr.length;i++){
+           var td=document.createElement('td');
+           td.innerHTML="<a href='javascrip:;'class='del'>删除</a>"
+           tr[i].appendChild(td);
+           var td=document.createElement('td');
+           td.innerHTML="<input class='remove' type='button' value='添加'>";
+           tr[i].appendChild(td);
+       }
+       
+        var del=document.querySelectorAll('.del');
+        var remove=document.querySelectorAll('.remove');
+        for(var i=0;i<del.length;i++){
+            del[i].onclick=function(){
                 tbody.removeChild(this.parentNode.parentNode)
             }
            remove[i].onclick=function(){
@@ -188,5 +499,7 @@
     </script>
 </body>
 
+
+</html>
 
 </html>
