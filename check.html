@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width='device-width', initial-scale=1.0">
@@ -15,6 +15,20 @@
            width: 100px;
            height: 100px;
        }
+
+
+       .message{
+            width: 500px;
+            margin: 100px auto;
+            border: 1px soild skyblue;
+            border-collapse: collapse;
+       }
+       .message td{
+           height: 35px;
+           line-height: 35px;
+           border: 2px solid skyblue;
+           text-align: center;
+       }
     </style>
 </head>
 <body>
@@ -24,10 +38,152 @@
         <div class="text">大清王朝专用</div>
     </nav>
 
+    <table class="message">
+        <thead>
+            <tr>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>一</td>
+                <td>二</td>
+                <td>三</td>
+                <td>四</td>
+                <td>五</td>
+                <td>总分</td>
+                <td>操作</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
 
+        </tbody>
+    </table>
 
     <script>
-        alert('此页面正在开发');
+        var n =[
+            {
+                number:1,
+                name:'张三',
+                one:'1',
+                two:'1',
+                three:'0',
+                four:'1',
+                five:'0',
+                num:'60分'
+            },
+            {
+                number:2,
+                name:'李四',
+                one:'0',
+                two:'1',
+                three:'0',
+                four:'1',
+                five:'0',
+                num:'40分'
+            },
+            {
+                number:3,
+                name:'张龙',
+                one:'1',
+                two:'1',
+                three:'1',
+                four:'1',
+                five:'0',
+                num:'80分'
+            },
+            {
+                number:4,
+                name:'赵虎',
+                one:'1',
+                two:'1',
+                three:'1',
+                four:'1',
+                five:'1',
+                num:'100分'
+            },
+            {
+                number:5,
+                name:'王朝',
+                one:'0',
+                two:'0',
+                three:'0',
+                four:'1',
+                five:'0',
+                num:'20分'
+            },
+            {
+                number:6,
+                name:'马汉',
+                one:'0',
+                two:'0',
+                three:'0',
+                four:'0',
+                five:'0',
+                num:'0分'
+            },
+
+        ];
+        var tbody=document.querySelector('tbody');
+        for(var i=0;i<n.length;i++){
+            var tr=document.createElement('tr');
+            tbody.appendChild(tr);
+            for(var j in n[i] ){
+                var td=document.createElement('td');
+                td.innerHTML=n[i][j];
+                tr.appendChild(td);
+            }
+            var td=document.createElement('td');
+            td.innerHTML="<a href='javascrip:;' class='del'>删除</a>";
+            tr.appendChild(td);
+            var td=document.createElement('td');
+            td.innerHTML="<a href='javascrip:;' class='remove'>更改</a>"
+            tr.appendChild(td);
+        }
+        var del=document.querySelectorAll('.del');
+        for(var i=0;i<del.length;i++){
+            del[i].onclick=function(){
+                tbody.removeChild(this.parentNode.parentNode)
+            }
+        }
+        var remove=document.querySelectorAll('.remove');
+        for(var i=0;i<remove.length;i++){
+            remove[i].onclick=function(){
+                var number=prompt('输入序号：');
+                var user=prompt('输入姓名：');
+                var one=prompt('输入本题是否正确：');
+                var two=prompt('输入本题是否正确：');
+                var three=prompt('输入本题是否正确：');
+                var four=prompt('输入本题是否正确：');
+                var five=prompt('输入本题是否正确：');
+                var num=prompt('输入总分：');
+
+                var nn=[{
+                    number:6,
+                    name:user,
+                    one:one,
+                    two:two,
+                    three:three,
+                    four:four,
+                    five:five,
+                    num:num
+                }];
+                tbody.removeChild(this.parentNode.parentNode);
+                for(var i=0;i<nn.length;i++){
+                    var tr=document.createElement('tr');
+                    tbody.appendChild(tr);
+                    for(var j in n[i] ){
+                        var td=document.createElement('td');
+                        td.innerHTML=nn[i][j];
+                        tr.appendChild(td);
+                     }
+                }
+                var td=document.createElement('td');
+                td.innerHTML="<a href='javascrip:;' class='del'>删除</a>";
+                tr.appendChild(td);
+                var td=document.createElement('td');
+                td.innerHTML="<a href='javascrip:;' class='remove'>更改</a>"
+                tr.appendChild(td);
+                }
+        }
     </script>
 </body>
 
