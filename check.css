@@ -1,0 +1,23 @@
+.cro_l{
+    position: absolute;
+    top:297px;
+    left: 0;
+    width: 280px;
+    height: 800px;
+    background-color: rgb(170, 243, 156);
+    padding: 10px;
+}
+.cro_l li{
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+.cro_l li a{
+    padding: 20px 40px;
+    color: black;
+    font-weight: 700;
+    font-size: 25px;
+}
+.cro_l li a:hover {
+    color: white;
+}
