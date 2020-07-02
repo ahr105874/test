@@ -48,14 +48,14 @@
             <div class="text">大清王朝专用</div>
         </nav>
         <div class="input">
-            选择题答案：<input type="file">
+            选择题标准答案：<input type="file">
         </div>
         <div class="input">
-            选择题答案：<input type="file">
+            学生选择题答案：<input type="file">
         </div>
-        <div class="input">
+        <!-- <div class="input">
             选择题答案：<input type="file">
-        </div>
+        </div> -->
         <a href="#" class="start">开始阅卷</a>
         <script>
             var input=document.querySelectorAll('input');
@@ -70,11 +70,16 @@
                 }
                 if(nu==0){
                     alert('正在阅卷，请稍后');
+                    
                 }else{
                     alert('请补全文件');
+                    
                 }
                 
             }
+
+
+           
         </script>
 	</body>	
 </html>
